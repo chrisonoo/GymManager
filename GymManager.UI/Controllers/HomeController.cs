@@ -18,6 +18,9 @@ public class HomeController : BaseController
 
     public async Task<IActionResult> Index()
     {
+        _logger.LogInformation("LogInformation");
+        _logger.LogError(new Exception("Log Error"), null);
+
         var ticket = await Mediator.Send(new GetTicketByIdQuery { Id = 1 });
         await Mediator.Send(new AddTicketCommand { Name = "Ticket 1" });
 

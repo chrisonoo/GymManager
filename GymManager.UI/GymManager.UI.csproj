@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NLog" Version="5.2.4" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="5.3.4" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GymManager.Infrastructure\GymManager.Infrastructure.csproj" />
   </ItemGroup>
 
