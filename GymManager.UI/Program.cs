@@ -11,6 +11,8 @@ builder.Logging.ClearProviders();
 builder.Logging.SetMinimumLevel(LogLevel.Information);
 builder.Logging.AddNLogWeb();
 
+builder.Services.AddCulture();
+
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
 
