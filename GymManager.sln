@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymManager.Domain", "GymMan
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymManager.Application", "GymManager.Application\GymManager.Application.csproj", "{192582B0-6CB5-45E5-B982-6E2D89331BDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymManager.Infrastructure", "GymManager.Infrastructure\GymManager.Infrastructure.csproj", "{DA9313E9-2E9B-4386-AFDB-BAE7B345985E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymManager.Infrastructure", "GymManager.Infrastructure\GymManager.Infrastructure.csproj", "{DA9313E9-2E9B-4386-AFDB-BAE7B345985E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

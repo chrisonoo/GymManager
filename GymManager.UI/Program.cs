@@ -1,5 +1,6 @@
 using GymManager.Application;
 using GymManager.Infrastructure;
+using GymManager.UI.Extensions;
 
 using NLog.Web;
 
@@ -11,6 +12,8 @@ builder.Logging.AddNLogWeb();
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
+
+builder.Services.DefineViewLacation(builder.Configuration);
 
 builder.Services.AddControllersWithViews();
 
