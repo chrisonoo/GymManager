@@ -14,7 +14,7 @@ builder.Logging.AddNLogWeb();
 builder.Services.AddCulture();
 
 builder.Services.AddApplication();
-builder.Services.AddInfrastructure();
+builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.DefineViewLacation(builder.Configuration);
 
