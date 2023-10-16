@@ -16,4 +16,8 @@
     <ProjectReference Include="..\GymManager.Domain\GymManager.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Tickets\" />
+  </ItemGroup>
+
 </Project>

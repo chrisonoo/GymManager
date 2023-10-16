@@ -32,21 +32,6 @@ if(!app.Environment.IsDevelopment())
 
 app.UseMiddleware<ExceptionHandlerMiddleware>();
 
-var logger = app.Services.GetService<ILogger<Program>>();
-
-if(app.Environment.IsDevelopment())
-{
-    logger.LogInformation("DEVELOPMENT MODE!!!");
-}
-else if(app.Environment.IsProduction())
-{
-    logger.LogInformation("PRODUCTION MODE!!!");
-}
-else
-{
-    logger.LogInformation("ANOTHER MODE!!!");
-}
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
