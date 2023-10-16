@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "provider": "jsdelivr",
+      "library": "cldrjs@0.5.5",
+      "destination": "wwwroot/lib/cldrjs/",
+      "files": [
+        "dist/cldr.js",
+        "dist/cldr/event.js",
+        "dist/cldr/supplemental.js"
+      ]
+    },
+    {
+      "library": "globalize@1.7.0",
+      "destination": "wwwroot/lib/globalize/",
+      "files": [
+        "globalize/date.js",
+        "globalize.js",
+        "globalize/number.js"
+      ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "jquery-validation-globalize-fix@0.1.1",
+      "destination": "wwwroot/lib/jquery-validation-globalize-fix/",
+      "files": [
+        "jquery.validate.globalize.js"
+      ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "cldr-core@43.1.0",
+      "destination": "wwwroot/lib/cldr-core/",
+      "files": [
+        "supplemental/likelySubtags.json",
+        "supplemental/numberingSystems.json",
+        "supplemental/plurals.json",
+        "supplemental/ordinals.json",
+        "supplemental/currencyData.json",
+        "supplemental/timeData.json",
+        "supplemental/calendarData.json",
+        "supplemental/weekData.json"
+      ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "cldr-dates-modern@43.1.0",
+      "destination": "wwwroot/lib/cldr-dates-modern/",
+      "files": [
+        "main/en/ca-gregorian.json",
+        "main/en/timeZoneNames.json",
+        "main/pl/ca-gregorian.json",
+        "main/pl/timeZoneNames.json"
+      ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "cldr-numbers-modern@43.1.0",
+      "destination": "wwwroot/lib/cldr-numbers-modern/",
+      "files": [
+        "main/en/currencies.json",
+        "main/en/numbers.json",
+        "main/pl/currencies.json",
+        "main/pl/numbers.json"
+      ]
+    }
+  ]
+}

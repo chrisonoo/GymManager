@@ -1,2 +1,41 @@
-﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+﻿@using System.Globalization;
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+<script src="~/lib/cldrjs/dist/cldr.js"></script>
+<script src="~/lib/cldrjs/dist/cldr/event.js"></script>
+<script src="~/lib/cldrjs/dist/cldr/supplemental.js"></script>
+
+<script src="~/lib/globalize/globalize.js"></script>
+<script src="~/lib/globalize/globalize/number.js"></script>
+<script src="~/lib/globalize/globalize/date.js"></script>
+
+<script src="~/lib/jquery-validation-globalize-fix/jquery.validate.globalize.js"></script>
+
+<script type="text/javascript">
+
+    var locale = "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName";
+
+    $.when(
+        $.getJSON("/lib/cldr-core/supplemental/likelySubtags.json"),
+        $.getJSON("/lib/cldr-core/supplemental/numberingSystems.json"),
+        $.getJSON("/lib/cldr-core/supplemental/plurals.json"),
+        $.getJSON("/lib/cldr-core/supplemental/ordinals.json"),
+        $.getJSON("/lib/cldr-core/supplemental/currencyData.json"),
+        $.getJSON("/lib/cldr-core/supplemental/timeData.json"),
+        $.getJSON("/lib/cldr-core/supplemental/weekData.json"),
+        $.getJSON(`/lib/cldr-dates-modern/main/${locale}/ca-gregorian.json`),
+        $.getJSON(`/lib/cldr-dates-modern/main/${locale}/timeZoneNames.json`),
+        $.getJSON(`/lib/cldr-numbers-modern/main/${locale}/numbers.json`),
+        $.getJSON(`/lib/cldr-numbers-modern/main/${locale}/currencies.json`),
+    ).then(function () {
+        return [].slice.apply(arguments, [0]).map(function (result) {
+            return result[0];
+        });
+    }).then(Globalize.load).then(function () {
+        Globalize.locale(locale);
+        $(document).trigger("globalizeHasBeenLoadedEvent");
+    });
+
+</script>
