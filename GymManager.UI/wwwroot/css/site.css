@@ -13,6 +13,27 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+a {
+    text-decoration: none; 
+}
+
+.main-navbar {
+    font-size: 1.25rem;
+}
+
+.carousel-control-prev, 
+.carousel-control-next {
+    filter: invert(100%);
+}
+
+.main-description{
+    font-size: 1.25rem
+}
+
+.secondary-description {
+    font-size: 1.1rem
+}
+
+ul.no-decoration{
+    list-style-type: none;
 }
