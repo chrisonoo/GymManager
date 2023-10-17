@@ -23,7 +23,7 @@ public class ExceptionHandlerMiddleware
         }
         catch(Exception exception)
         {
-            _logger.LogError(exception, "GymManager Request: Unhandled exception - Request {Name}", context.Request.Path);
+            _logger.LogError(exception, "***** GymManager Request: Unhandled exception - Request {Name} *****", context.Request.Path);
             await HandleExceptionAsync(context, exception).ConfigureAwait(false);
         }
     }

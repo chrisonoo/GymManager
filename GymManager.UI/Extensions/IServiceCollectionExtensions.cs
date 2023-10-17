@@ -6,7 +6,7 @@ namespace GymManager.UI.Extensions;
 
 public static class IServiceCollectionExtensions
 {
-    public static void DefineViewLacation(this IServiceCollection services, IConfiguration configuration)
+    public static void DefineViewLocation(this IServiceCollection services, IConfiguration configuration)
     {
         var templateKey = configuration.GetSection("TemplateKey").Value;
         services.Configure<RazorViewEngineOptions>(x =>

@@ -16,7 +16,7 @@ builder.Services.AddCulture();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
-builder.Services.DefineViewLacation(builder.Configuration);
+builder.Services.DefineViewLocation(builder.Configuration);
 
 builder.Services.AddControllersWithViews();
 

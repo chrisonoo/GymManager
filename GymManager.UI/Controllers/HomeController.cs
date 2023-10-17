@@ -24,7 +24,7 @@ public class HomeController : BaseController
 
     public IActionResult Privacy()
     {
-        throw new Exception("Unhandled error");
+        // throw new Exception("Unhandled error");
 
         return View();
     }

@@ -19,8 +19,8 @@ public class AddTicketCommandHandler : IRequestHandler<AddTicketCommand>
         // Save to database
         */
 
-        _logger.LogInformation("*** Log Information from AddTicketCommandHandler ***");
-        _logger.LogError(new Exception("Log Error from AddTicketCommandHandler"), null);
+        _logger.LogInformation("***** Log Information from AddTicketCommandHandler *****");
+        _logger.LogError(new Exception("***** Log Error from AddTicketCommandHandler *****"), null);
 
         return Unit.Value;
     }
