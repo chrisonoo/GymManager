@@ -48,8 +48,31 @@
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery.cookie/jquery.cookie.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    
+    <div class="privacy-policy-info" style="display: none;">
+        Serwis wykorzystuje pliki cookies. Korzystając ze strony wyrażasz zgodę na wykorzystanie plików cookies.
+        <button onclick="closePrivacyPolicy()" type="button" class="btn btn-light small mx-3 my-1 privacy-policy-btn">
+            Ok, rozumiem
+        </button>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            if ($.cookie("privacyPolicy") !== "1")
+                $(".privacy-policy-info").show();
+        });
+
+        function closePrivacyPolicy() {
+            $(".privacy-policy-info").hide();
+            $.cookie("privacyPolicy", "1", { path: '/', expires: 365 });
+        }
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

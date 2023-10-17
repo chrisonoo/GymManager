@@ -65,6 +65,14 @@
         "main/pl/currencies.json",
         "main/pl/numbers.json"
       ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "jquery.cookie@1.4.1",
+      "destination": "wwwroot/lib/jquery.cookie/",
+      "files": [
+        "jquery.cookie.min.js"
+      ]
     }
   ]
 }
