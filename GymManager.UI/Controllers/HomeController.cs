@@ -1,9 +1,4 @@
-﻿using System.Diagnostics;
-
-using GymManager.Application.Tickets.Commands.AddTicket;
-using GymManager.UI.Models;
-
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace GymManager.UI.Controllers;
 public class HomeController : BaseController
@@ -15,23 +10,18 @@ public class HomeController : BaseController
         _logger = logger;
     }
 
-    public async Task<IActionResult> Index()
+    public IActionResult Index()
     {
-        await Mediator.Send(new AddTicketCommand { Name = "Test" });
-
         return View();
     }
 
     public IActionResult Privacy()
     {
-        // throw new Exception("Unhandled error");
-
         return View();
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    public IActionResult Contact()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return View();
     }
 }
