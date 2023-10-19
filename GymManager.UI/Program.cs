@@ -1,4 +1,5 @@
 using GymManager.Application;
+using GymManager.Application.Common.Interfaces;
 using GymManager.Infrastructure;
 using GymManager.UI.Extensions;
 using GymManager.UI.Middlewares;
@@ -22,7 +23,12 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-app.UseInfrastructure();
+using(var scope = app.Services.CreateScope())
+{
+    app.UseInfrastructure(
+        scope.ServiceProvider.GetRequiredService<IApplicationDbContext>(),
+        app.Services.GetService<IAppSettingsService>());
+}
 
 if(!app.Environment.IsDevelopment())
 {
