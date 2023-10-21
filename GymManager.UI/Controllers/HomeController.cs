@@ -31,7 +31,12 @@ public class HomeController : BaseController
     [HttpPost]
     public async Task<IActionResult> Contact(SendContactEmailCommand command)
     {
-        await Mediator.Send(command);
+        var result = await MediatorSendValidate(command);
+
+        if(!result.IsValid)
+        {
+            return View(command);
+        }
 
         return RedirectToAction(nameof(Contact));
     }
