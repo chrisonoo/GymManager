@@ -1,4 +1,6 @@
-﻿using GymManager.Application.Contacts.Commands.SendContactEmail;
+﻿using AspNetCore.ReCaptcha;
+
+using GymManager.Application.Contacts.Commands.SendContactEmail;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,6 +29,7 @@ public class HomeController : BaseController
         return View(new SendContactEmailCommand());
     }
 
+    [ValidateReCaptcha]
     [ValidateAntiForgeryToken]
     [HttpPost]
     public async Task<IActionResult> Contact(SendContactEmailCommand command)
@@ -35,6 +38,7 @@ public class HomeController : BaseController
 
         if(!result.IsValid)
         {
+            ModelState.AddModelError("AntySpamResult", "Wypełnij pole ReCaptcha (zabezpieczenie przez spamem)");
             return View(command);
         }
 

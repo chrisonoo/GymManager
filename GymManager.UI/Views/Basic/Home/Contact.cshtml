@@ -1,4 +1,5 @@
-﻿@using GymManager.Application.Contacts.Commands.SendContactEmail
+﻿@using AspNetCore.ReCaptcha
+@using GymManager.Application.Contacts.Commands.SendContactEmail
 @inject IConfiguration configuration
 @model SendContactEmailCommand
 
@@ -62,6 +63,13 @@
             </div>
 
             <div class="mt-3"></div>
+
+            <div class="form-group">
+                @Html.HiddenFor(x => x.AntySpamResult)
+                @Html.ValidationMessageFor(x => x.AntySpamResult)
+            </div>
+
+            @Html.ReCaptcha()
 
             <button type="submit" class="btn btn-primary btn-lg mt-4">
                 <i class="fas fa-solid fa-circle-check"></i>Wyślij wiadomość
